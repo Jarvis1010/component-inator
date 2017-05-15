@@ -1,11 +1,20 @@
 {
   "name": "component-inator",
-  "version": "1.0.0",
-  "description": "\"Simple tool to build a react-component skeleton\"",
+  "version": "0.1.0",
+  "description": "Simple tool to build a react-component skeleton",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jarvis1010/component-inator"
+  },
+  "keywords": [
+    "component",
+    "react",
+    "generator"
+  ],
   "author": "'Justin Travis Mair'",
   "license": "ISC"
 }
