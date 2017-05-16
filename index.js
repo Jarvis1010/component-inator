@@ -19,7 +19,7 @@ if (process.argv.length < 3) {
     : path.resolve (`${__dirname}/../../src/app/components`);
 
   if (fs.existsSync (parentDir)) {
-    const dir = `/${component}`;
+    const dir = `${parentDir}/${component}`;
 
     //check if directory exists and log a message if it does
     if (!fs.existsSync (dir)) {
