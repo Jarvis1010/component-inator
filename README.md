@@ -7,11 +7,11 @@ component-inator
 
 ## Installation
 
-  npm install https://github.com/Jarvis1010/component-inator --save
+  npm install component-inator --save
 
 ## Usage
 
-  [TODO]
+  node ./{path}/component-inator [componentname] [**Optional** path relative to the current working directory]
 
 ## Contributing
 
