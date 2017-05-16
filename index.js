@@ -23,7 +23,6 @@ if (process.argv.length < 3) {
 
     //check if directory exists and log a message if it does
     if (!fs.existsSync (dir)) {
-      //create path if it doesn't exist'
       fs.mkdirSync (dir);
 
       //create files from templates
