@@ -7,7 +7,7 @@ component-inator
 
 ## Installation
 
-  npm install component-inator --save
+  npm install component-inator --save-dev
 
 ## Usage
 

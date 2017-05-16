@@ -15,6 +15,9 @@
     "react",
     "generator"
   ],
+  "bin": {
+    "cmpnt": "./"
+  },
   "author": "'Justin Travis Mair'",
   "license": "ISC",
   "dependencies": {
