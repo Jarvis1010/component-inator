@@ -16,7 +16,7 @@
     "generator"
   ],
   "bin": {
-    "cmpnt": "./"
+    "cmpnt": "./index.js"
   },
   "author": "'Justin Travis Mair'",
   "license": "ISC",
