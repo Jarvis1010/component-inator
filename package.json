@@ -1,6 +1,6 @@
 {
   "name": "component-inator",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Simple tool to build a react-component skeleton",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "generator"
   ],
   "bin": {
-    "cmpnt": "./index.js"
+    "componentinator": "./index.js"
   },
   "author": "'Justin Travis Mair'",
   "license": "ISC",
