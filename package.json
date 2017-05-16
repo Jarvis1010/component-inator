@@ -16,5 +16,8 @@
     "generator"
   ],
   "author": "'Justin Travis Mair'",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "path": "^0.12.7"
+  }
 }
