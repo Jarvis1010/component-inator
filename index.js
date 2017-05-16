@@ -11,9 +11,9 @@ if (process.argv.length < 3) {
 } else {
   const component = process.argv[2];
 
-  const dir =
-    process.argv[3] ||
-    path.resolve (`${__dirname}/../../src/app/components/${component}`);
+  const dir = process.argv.length > 3
+    ? path.resolve (`${process.cwd ()}/${process.argv[3]}/${component}`)
+    : path.resolve (`${__dirname}/../../src/app/components/${component}`);
 
   //check if directory exists
   if (!fs.existsSync (dir)) {
