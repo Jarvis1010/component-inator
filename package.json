@@ -1,6 +1,6 @@
 {
-  "name": "component-inator",
-  "version": "2.0.2",
+  "name": "react-component-inator",
+  "version": "1.0.0",
   "description": "Simple tool to build a react-component skeleton",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jarvis1010/component-inator.git"
+    "url": "git+https://github.com/Jarvis1010/react-component-inator.git"
   },
   "keywords": [
     "component",

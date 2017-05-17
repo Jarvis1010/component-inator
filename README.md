@@ -1,4 +1,4 @@
-component-inator
+react-component-inator
 =========
 
   Simple tool to build a react-component skeleton.  It accepts two arguments: The Component name and the path where you want the component skeleton to be created.  The second argument must be a relative path from the directory it is running in. 
