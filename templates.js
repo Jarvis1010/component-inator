@@ -1,44 +1,40 @@
 module.exports.jsCreator = component => {
-  return `
-    import React from 'react';
-    import styles from './style.css';
-    import classes from 'join-classnames';
+  return `import React from 'react';
+import styles from './style.css';
+import classes from 'join-classnames';
 
-    export const ${component} = ({className}) => (
-        <div className={className}>
+export const ${component} = ({className}) => (
+    <div className={className}>
            
-        </div>
-    );
+    </div>
+);
 
 
-    export default ${component};
+export default ${component};
 `;
 };
 
 module.exports.storyCreator = component => {
-  return `
-    import {storiesOf, action} from '@kadira/storybook';
-    import ${component} from './${component}';
+  return `import {storiesOf, action} from '@kadira/storybook';
+import ${component} from './${component}';
 
-    storiesOf ('${component}', module)
-    .add ('default', () => <${component} />)
+storiesOf ('${component}', module)
+  .add ('default', () => <${component} />)
 `;
 };
 
 module.exports.packageJSON = component => {
-  return `
-    {
-        "main": "${component}.js"
-    }
+  return `{
+  "main": "${component}.js"
+}
 `;
 };
 
 module.exports.stylesCSS = () => {
-  return `
-    @import '../../variables.css';
+  return `@import '../../variables.css';
 
-    .default{
+.default{
 
-    }
+}
 `;
 };
