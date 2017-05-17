@@ -4,7 +4,7 @@ import styles from './style.css';
 import classes from 'join-classnames';
 
 export const ${component} = ({className}) => (
-    <div className={className}>
+    <div className={classes(className, styles.default)}>
            
     </div>
 );
