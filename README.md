@@ -16,7 +16,7 @@ component-inator
 ## Usage
 
 ```
-componentinator component_name [relative_path]
+componentinator ComponentName [path=path/for/component]
 ```
 
 ## Contributing
@@ -27,3 +27,4 @@ In lieu of a formal styleguide, please format your code using the 'prettier' for
 
 * 0.1.0 Unstable Release
 * 2.0.0 Initial Stable Release
+* 2.0.1 Improved argument 
