@@ -55,5 +55,5 @@ if (fs.existsSync (options.path)) {
     console.log (`${dir} already exists.`);
   }
 } else {
-  console.log (`${parentDir} does not exist.`);
+  console.log (`${options.path} does not exist.`);
 }
