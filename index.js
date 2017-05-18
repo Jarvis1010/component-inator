@@ -2,35 +2,40 @@
 const fs = require ('fs');
 const path = require ('path');
 const sanitize = require ('sanitize-filename');
-const {
-  jsCreator,
-  storyCreator,
-  packageJSON,
-  stylesCSS,
-} = require ('./templates');
+const {createComponent} = require ('./create');
 
-const defaults = {
-  path: path.resolve (`${__dirname}/../../src/app/components`),
-  type: 'component',
+const defaultPaths = {
+  component: path.resolve (`${__dirname}/../../src/app/components`),
+  view: path.resolve (`${__dirname}/../../src/app/views`),
 };
 
-const options = process.argv.reduce ((object, value) => {
-  let valueObj;
-  if (value.indexOf ('=') > -1) {
-    const option = value.split ('=');
-    valueObj = {
-      [option[0]]: option[0] == 'path'
-        ? path.resolve (`${process.cwd ()}/${option[1]}`)
-        : option[1],
-    };
-  } else {
-    valueObj = {name: sanitize (value)};
-  }
-  return Object.assign ({}, object, valueObj);
-}, defaults);
+const runTypes = {
+  component: createComponent,
+};
 
-//check for arguments and log a message if none provided or if component name not provided
-if (process.argv.length < 3 || !options.name) {
+const options = process.argv.reduce (
+  (object, value) => {
+    let valueObj;
+    if (value.indexOf ('=') > -1) {
+      const option = value.split ('=');
+      valueObj = {
+        [option[0]]: option[0] == 'path'
+          ? path.resolve (`${process.cwd ()}/${option[1]}`)
+          : option[1],
+      };
+    } else {
+      valueObj = {name: sanitize (value)};
+    }
+    return Object.assign ({}, object, valueObj);
+  },
+  {type: 'component'}
+);
+
+//add default path if none provided
+options.path = options.path ? options.path : defaultPaths[options.type];
+
+//check for arguments and log a message if none provided
+if (process.argv.length < 3 || !options.name || !options.path) {
   console.log (
     'Usage: componentinator ComponentName [path=path/for/component]'
   );
@@ -41,21 +46,9 @@ const component = options.name;
 
 if (fs.existsSync (options.path)) {
   const dir = `${options.path}/${options.name}`;
-
   //check if directory exists and log a message if it does
   if (!fs.existsSync (dir)) {
-    //make directory
-    fs.mkdirSync (dir);
-
-    //create files from templates
-    fs.writeFileSync (`${dir}/${options.name}.js`, jsCreator (options.name));
-    fs.writeFileSync (
-      `${dir}/${options.name}.story.js`,
-      storyCreator (options.name)
-    );
-    fs.writeFileSync (`${dir}/package.json`, packageJSON (options.name));
-    fs.writeFileSync (`${dir}/style.css`, stylesCSS ());
-    console.log (`${options.name} successfully created at ${options.path}`);
+    runTypes[options.type] (dir, options.name);
   } else {
     console.log (`${dir} already exists.`);
   }
