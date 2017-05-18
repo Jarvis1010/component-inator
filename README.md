@@ -1,11 +1,13 @@
 react-component-inator
 =========
 
-  Simple tool to build a react-component skeleton.  It accepts two arguments: The Component name and the path where you want the component skeleton to be created.  The second argument must be a relative path from the directory it is running in. 
+  react-component-inator is a simple tool to build a react-component skeleton.  It was designed to compliment the [react-starter](https://github.com/tuxsudo/react-starter) kit, but can be used for any react project.
   
-  If the second argument is omitted, it will default to [project root]/src/app/components/ relative to the root directory of the project.  
+  It accepts two arguments, in any order: The Component name and the path where you want the component skeleton to be created.  The path argument must be a relative path to the current working directory.  If the path argument is omitted, it will default to [project root]/src/app/components/.  
   
-  **Note:** if the path does not exit, it will not run.
+  **Note:** 
+  If the path provided does not exist, it will not work.
+  You must be using Node version 6.x.x or higher for this module to work  
 
   The Skeleton assumes that you are using the @kadira/storybook module and creates storybook.js files needed for it.
 
@@ -16,7 +18,13 @@ react-component-inator
 ## Usage
 
 ```
-componentinator ComponentName [path=path/for/component]
+componentinator [path=path/for/component] ComponentName
+```
+## Example
+```
+"scripts":{
+  "create:component":"componentinator path=/src/components"
+}
 ```
 
 ## Contributing
@@ -25,6 +33,5 @@ In lieu of a formal styleguide, please format your code using the 'prettier' for
 
 ## Release History
 
-* 0.1.0 Unstable Release
-* 2.0.0 Initial Stable Release
-* 2.0.1 Improved argument 
+* 1.0.0 Initial Stable Release
+* 1.0.1-1.0.2 Minor bug fixes
