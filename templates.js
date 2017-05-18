@@ -38,3 +38,18 @@ module.exports.stylesCSS = () => {
 }
 `;
 };
+
+module.exports.viewJS = () => {
+  return `import React from 'react';
+import 'normalize.css';
+import styles from './style.css';
+
+
+export default () => (
+
+    <div className={styles.app}>
+
+    </div>
+);
+`;
+};
