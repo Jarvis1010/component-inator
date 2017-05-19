@@ -18,7 +18,7 @@ react-component-inator
 ## Usage
 
 ```
-componentinator [path=path/for/component] [type=view|component] ComponentName
+componentinator [path=path/for/component] [type=view|component|container] ComponentName
 ```
 ## Example
 ```
@@ -36,4 +36,5 @@ In lieu of a formal styleguide, please format your code using the 'prettier' for
 
 * 1.0.0 Initial Stable Release
 * 1.0.1-1.0.2 Minor bug fixes
-* 1.1.0 Choose between a view or component 
+* 1.1.0 Choose between a view or component
+* 1.2.0 Container added as one of the types  

@@ -2,15 +2,18 @@
 const fs = require ('fs');
 const path = require ('path');
 const sanitize = require ('sanitize-filename');
-const {createComponent} = require ('./create');
+const {createComponent, createView, createContainer} = require ('./create');
 
 const defaultPaths = {
   component: path.resolve (`${__dirname}/../../src/app/components`),
   view: path.resolve (`${__dirname}/../../src/app/views`),
+  container: path.resolve (`${__dirname}/../../src/app/containers`),
 };
 
 const runTypes = {
   component: createComponent,
+  view: createView,
+  container: createContainer,
 };
 
 const options = process.argv.reduce (
@@ -37,12 +40,10 @@ options.path = options.path ? options.path : defaultPaths[options.type];
 //check for arguments and log a message if none provided
 if (process.argv.length < 3 || !options.name || !options.path) {
   console.log (
-    'Usage: componentinator ComponentName [path=path/for/component]'
+    'Usage: componentinator ComponentName [path=path/for/component] [type=component|view|container]'
   );
   process.exit ();
 }
-
-const component = options.name;
 
 if (fs.existsSync (options.path)) {
   const dir = `${options.path}/${options.name}`;
