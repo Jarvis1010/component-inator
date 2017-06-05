@@ -24,7 +24,8 @@ componentinator [path=path/for/component] [type=view|component|container] Compon
 ```
 "scripts":{
   "create:component":"componentinator path=/src/components",
-  "create:view":"componentinator path=/src/components type=view"
+  "create:view":"componentinator path=/src/components type=view",
+  "create:containter":"componentinator type=container"
 }
 ```
 
@@ -37,4 +38,6 @@ In lieu of a formal styleguide, please format your code using the 'prettier' for
 * 1.0.0 Initial Stable Release
 * 1.0.1-1.0.2 Minor bug fixes
 * 1.1.0 Choose between a view or component
-* 1.2.0 Container added as one of the types  
+* 1.2.0 Container added as one of the types
+* 1.2.1 Minor bug fixes 
+* 1.3.0 Enforce best practise by requiring propercase in names
