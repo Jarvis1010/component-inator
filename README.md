@@ -41,3 +41,4 @@ In lieu of a formal styleguide, please format your code using the 'prettier' for
 * 1.2.0 Container added as one of the types
 * 1.2.1 Minor bug fixes 
 * 1.3.0 Enforce best practise by requiring propercase in names
+* 1.3.1 Minor bug fix with file names
