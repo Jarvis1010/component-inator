@@ -7,13 +7,13 @@ const { createComponent, createView, createContainer } = require('./create');
 const defaultPaths = {
   component: path.resolve(`${__dirname}/../../src/app/components`),
   view: path.resolve(`${__dirname}/../../src/app/views`),
-  container: path.resolve(`${__dirname}/../../src/app/containers`),
+  container: path.resolve(`${__dirname}/../../src/app/containers`)
 };
 
 const runTypes = {
   component: createComponent,
   view: createView,
-  container: createContainer,
+  container: createContainer
 };
 
 const options = process.argv.reduce(
@@ -24,7 +24,7 @@ const options = process.argv.reduce(
       valueObj = {
         [option[0]]: option[0] == 'path'
           ? path.resolve(`${process.cwd()}/${option[1]}`)
-          : option[1],
+          : option[1]
       };
     } else {
       const name = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
@@ -32,7 +32,7 @@ const options = process.argv.reduce(
     }
     return Object.assign({}, object, valueObj);
   },
-  { type: 'component' },
+  { type: 'component' }
 );
 
 //add default path if none provided
@@ -41,7 +41,7 @@ options.path = options.path ? options.path : defaultPaths[options.type];
 //check for arguments and log a message if none provided
 if (process.argv.length < 3 || !options.name || !options.path) {
   console.log(
-    'Usage: componentinator ComponentName [path=path/for/component] [type=component|view|container]',
+    'Usage: componentinator ComponentName [path=path/for/component] [type=component|view|container]'
   );
   process.exit();
 }
