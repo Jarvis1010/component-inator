@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const sanitize = require('sanitize-filename');
+const humps = require('humps');
 const { createComponent, createView, createContainer } = require('./create');
 
 const defaultPaths = {
@@ -27,7 +28,7 @@ const options = process.argv.reduce(
           : option[1]
       };
     } else {
-      const name = value.charAt(0).toUpperCase() + value.slice(1);
+      const name = humps.pascalize(value);
       valueObj = { name: sanitize(name) };
     }
     return Object.assign({}, object, valueObj);
