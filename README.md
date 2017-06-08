@@ -42,3 +42,4 @@ In lieu of a formal styleguide, please format your code using the 'prettier' for
 * 1.2.1 Minor bug fixes 
 * 1.3.0 Enforce best practise by requiring propercase in names
 * 1.3.1-1.3.3 Minor bug fixes
+* 1.4.0 Converts name provided to Pascal case
