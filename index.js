@@ -27,7 +27,7 @@ const options = process.argv.reduce(
           : option[1]
       };
     } else {
-      const name = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+      const name = value.charAt(0).toUpperCase() + value.slice(1);
       valueObj = { name: sanitize(name) };
     }
     return Object.assign({}, object, valueObj);

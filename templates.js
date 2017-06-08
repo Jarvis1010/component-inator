@@ -47,7 +47,7 @@ import styles from './style.css';
 
 export default () => (
 
-    <div className={styles.app}>
+    <div className={styles.view}>
 
     </div>
 );
