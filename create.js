@@ -5,7 +5,7 @@ const {
   packageJSON,
   stylesCSS,
   viewJS,
-  containerJS
+  containerJS,
 } = require('./templates');
 
 module.exports.createComponent = (dir, component) => {
@@ -16,7 +16,7 @@ module.exports.createComponent = (dir, component) => {
   fs.writeFileSync(`${dir}/${component}.js`, jsCreator(component));
   fs.writeFileSync(`${dir}/${component}.story.js`, storyCreator(component));
   fs.writeFileSync(`${dir}/package.json`, packageJSON(component));
-  fs.writeFileSync(`${dir}/style.css`, stylesCSS());
+  fs.writeFileSync(`${dir}/${component}.css`, stylesCSS(component));
   console.log(`${component} successfully created at ${dir}`);
 };
 
@@ -28,7 +28,7 @@ module.exports.createView = (dir, component) => {
   fs.writeFileSync(`${dir}/${component}.js`, viewJS(component));
   fs.writeFileSync(`${dir}/${component}.story.js`, storyCreator(component));
   fs.writeFileSync(`${dir}/package.json`, packageJSON(component));
-  fs.writeFileSync(`${dir}/style.css`, stylesCSS());
+  fs.writeFileSync(`${dir}/${component}.css`, stylesCSS(component));
   console.log(`${component} successfully created at ${dir}`);
 };
 

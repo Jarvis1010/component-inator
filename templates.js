@@ -1,10 +1,10 @@
 module.exports.jsCreator = component => {
   return `import React from 'react';
-import styles from './style.css';
+import styles from './${component}.css';
 import classes from 'join-classnames';
 
 export const ${component} = ({className}) => (
-    <div className={classes(className, styles.default)}>
+    <div className={classes(className, styles.${component})}>
            
     </div>
 );
@@ -17,6 +17,7 @@ export default ${component};
 module.exports.storyCreator = component => {
   return `import {storiesOf, action} from '@kadira/storybook';
 import ${component} from './${component}';
+import React from 'react';
 
 storiesOf ('${component}', module)
   .add ('default', () => <${component} />)
@@ -30,10 +31,9 @@ module.exports.packageJSON = component => {
 `;
 };
 
-module.exports.stylesCSS = () => {
-  return `@import '../../variables.css';
-
-.default{
+module.exports.stylesCSS = component => {
+  return `
+.${component}{
 
 }
 `;
@@ -41,7 +41,6 @@ module.exports.stylesCSS = () => {
 
 module.exports.viewJS = () => {
   return `import React from 'react';
-import 'normalize.css';
 import styles from './style.css';
 
 
@@ -58,7 +57,8 @@ module.exports.containerJS = component => {
   return `import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { setPageMeta } from '../actions/page-meta';
-import LandingView from '../views/LandingView';
+//Stubbed out View
+const DummyView = ()=<h1>dummy</h1>
 
 const pageMeta = {
   title: "...",
@@ -106,7 +106,7 @@ class ${component} extends Component {
   }
 
   render() {
-    return <LandingView {...this.props} />
+    return <DummyView {...this.props} />
   }
 
 }
