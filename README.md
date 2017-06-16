@@ -44,4 +44,4 @@ In lieu of a formal styleguide, please format your code using the 'prettier' for
 * 1.3.1-1.3.3 Minor bug fixes
 * 1.4.0 Converts name provided to Pascal case
 * 1.5.0 Update to Template to allow for more intuitive names
-* 1.5.1 Minor bug fixes
+* 1.5.1-1.5.2 Minor bug fixes
