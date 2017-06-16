@@ -39,9 +39,9 @@ module.exports.stylesCSS = component => {
 `;
 };
 
-module.exports.viewJS = () => {
+module.exports.viewJS = component => {
   return `import React from 'react';
-import styles from './style.css';
+import styles from './${component}.css';
 
 
 export default () => (
