@@ -58,7 +58,7 @@ module.exports.containerJS = component => {
 import { connect } from 'react-redux';
 import { setPageMeta } from '../actions/page-meta';
 //Stubbed out View
-const DummyView = ()=<h1>dummy</h1>
+const DummyView =()=><h1>dummy</h1>;
 
 const pageMeta = {
   title: "...",
