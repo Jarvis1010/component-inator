@@ -5,7 +5,7 @@ import classes from 'join-classnames';
 
 export const ${component} = ({className}) => (
     <div className={classes(className, styles.${component})}>
-           
+      <span>Hello, World!</span>       
     </div>
 );
 
